@@ -1,0 +1,31 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: atguigu-crowd-pay
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  redis:
+    host: 124.0.0.2
+  session:
+    store-type: redis
+  profiles:
+    active:
+    - dev
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka
+ali:
+  pay:
+    alipay-public-key:
+    app-id:
+    charset: utf-8
+    gatewayUrl: https://openapi.alipaydev.com/gateway.do
+    merchant-private-key: 
+    notify-url: http://mnw48b.natappfree.cc/pay/notify
+    return-url: http://localhost:5000/pay/return
+    sign-type: RSA2
+
